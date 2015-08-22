@@ -1,0 +1,139 @@
+﻿Build started 2015-08-22 12:20:10.
+     1>Project "D:\GitHub\GMFMODSimpleGrix\vsproject\GMFMODSimpleGrix.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D GMFMODSIMPLEGRIX_EXPORTS /D _WINDLL /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt source\main_STUDIO.cpp
+         main_STUDIO.cpp
+     1>source\main_STUDIO.cpp(327): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>source\main_STUDIO.cpp(328): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : see declaration of 'strcat'
+     1>source\main_STUDIO.cpp(332): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>source\main_STUDIO.cpp(333): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : see declaration of 'strcat'
+     1>source\main_STUDIO.cpp(338): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>source\main_STUDIO.cpp(339): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : see declaration of 'strcat'
+     1>source\main_STUDIO.cpp(343): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'sprintf'
+     1>source\main_STUDIO.cpp(344): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : see declaration of 'strcat'
+     1>source\main_STUDIO.cpp(347): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>source\main_STUDIO.cpp(359): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(533): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>source\main_STUDIO.cpp(555): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>source\main_STUDIO.cpp(556): warning C4996: 'strrev': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _strrev. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(257) : see declaration of 'strrev'
+     1>source\main_STUDIO.cpp(567): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>source\main_STUDIO.cpp(568): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>source\main_STUDIO.cpp(903): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1059): warning C4805: '==' : unsafe mix of type 'float' and type 'bool' in operation
+     1>source\main_STUDIO.cpp(1081): warning C4805: '==' : unsafe mix of type 'float' and type 'bool' in operation
+     1>source\main_STUDIO.cpp(1101): warning C4805: '==' : unsafe mix of type 'float' and type 'bool' in operation
+     1>source\main_STUDIO.cpp(1109): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1110): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1111): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1142): warning C4805: '==' : unsafe mix of type 'float' and type 'bool' in operation
+     1>source\main_STUDIO.cpp(1152): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1153): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1154): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1189): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1190): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1191): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1193): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1194): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1195): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1202): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>source\main_STUDIO.cpp(1262): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>source\main_STUDIO.cpp(1263): warning C4800: 'double' : forcing value to bool 'true' or 'false' (performance warning)
+     1>source\main_STUDIO.cpp(1264): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1296): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1297): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1298): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1300): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1301): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1302): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1313): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1314): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1319): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1320): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1321): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1323): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1324): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1325): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1335): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1350): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1351): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1590): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1599): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1630): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1631): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1632): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1641): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1659): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1668): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1692): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1696): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1700): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1704): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1708): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1855): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1859): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1863): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1867): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(1871): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(2020): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(2065): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(2083): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(2103): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(2104): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(2105): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(2106): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(2107): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(2108): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(2126): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(2137): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(2146): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(2147): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(2156): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(2208): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(2228): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(2232): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(2236): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(2240): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(2244): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(2667): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+     1>source\main_STUDIO.cpp(2668): warning C4996: 'strrev': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _strrev. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(257) : see declaration of 'strrev'
+     1>source\main_STUDIO.cpp(2680): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+     1>source\main_STUDIO.cpp(2697): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+     1>source\main_STUDIO.cpp(2847): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(2931): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(2952): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(3217): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(3231): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(3245): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>source\main_STUDIO.cpp(3463): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : see declaration of 'strcpy'
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\GitHub\GMFMODSimpleGrix\vsproject\Release\GMFMODSimpleGrix.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\GitHub\GMFMODSimpleGrix\vsproject\Release\GMFMODSimpleGrix.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\GitHub\GMFMODSimpleGrix\vsproject\Release\GMFMODSimpleGrix.lib" /MACHINE:X86 /SAFESEH /DLL Release\main_STUDIO.obj
+         source\fmodex_vc.lib
+     1>LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/OPT:ICF' specification
+            Creating library D:\GitHub\GMFMODSimpleGrix\vsproject\Release\GMFMODSimpleGrix.lib and object D:\GitHub\GMFMODSimpleGrix\vsproject\Release\GMFMODSimpleGrix.exp
+         GMFMODSimpleGrix.vcxproj -> D:\GitHub\GMFMODSimpleGrix\vsproject\Release\GMFMODSimpleGrix.dll
+     1>Done Building Project "D:\GitHub\GMFMODSimpleGrix\vsproject\GMFMODSimpleGrix.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.26
