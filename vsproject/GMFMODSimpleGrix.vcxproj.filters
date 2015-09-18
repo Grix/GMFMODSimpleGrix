@@ -46,9 +46,15 @@
     <None Include="source\fmodex.dll">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="source\fmodex64.dll">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Library Include="source\fmodex_vc.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="source\fmodex64_vc.lib">
       <Filter>Source Files</Filter>
     </Library>
   </ItemGroup>

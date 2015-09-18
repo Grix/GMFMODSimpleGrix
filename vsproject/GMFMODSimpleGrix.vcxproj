@@ -86,8 +86,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="source\fmodex.dll" />
+    <None Include="source\fmodex64.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Library Include="source\fmodex64_vc.lib" />
     <Library Include="source\fmodex_vc.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
