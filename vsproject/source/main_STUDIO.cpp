@@ -500,7 +500,17 @@ FMOD_RESULT F_CALLBACK myopen(const char *name, int unicode, unsigned int *files
         //FILE *fp = NULL;
 		HANDLE fp = NULL;
 		//fp = fopen(name, "rb");
-		fp = CreateFile(name, FILE_READ_DATA,FILE_SHARE_READ,NULL,OPEN_EXISTING,0,NULL);
+        if (!unicode) {
+            int len = MultiByteToWideChar(CP_UTF8, 0, name, -1, NULL, 0);
+            wchar_t* wname = new wchar_t[len];
+            MultiByteToWideChar(CP_UTF8, 0, name, -1, wname, len);
+            fp = CreateFileW(wname, FILE_READ_DATA, FILE_SHARE_READ, NULL, OPEN_EXISTING, 0, NULL);
+            delete[] wname;
+        }
+        else {
+            fp = CreateFileW((const wchar_t*)name, FILE_READ_DATA, FILE_SHARE_READ, NULL, OPEN_EXISTING, 0, NULL);
+        }
+
         if (!fp)
         {
             return FMOD_ERR_FILE_NOTFOUND;
