@@ -1474,7 +1474,7 @@ return t;
 #define FMODSoundPlay3d
 //export double FMODSoundPlay3d(double sound, double x, double y, double z, double paused)
 
-//Play a sound relative to the playe or listenner position
+//Play a sound relative to the player or listener position
 
 //returns 0 on error
 //retuns a sound instance on success
@@ -1504,7 +1504,7 @@ return t;
 #define FMODSoundLoop3d
 //export double FMODSoundLoop3d(double sound, double x, double y, double z, double paused)
 
-//Plays (Loops) a sound relative to the player or listenner position
+//Plays (Loops) a sound relative to the player or listener position
 
 //returns 0 on error
 //retuns a sound instance on success
@@ -2202,7 +2202,7 @@ return external_call(global.dll_FMODGroupGetMuted,argument0);
 #define FMODGroupSetFrequency
 //export double FMODGroupSetFrequency(double group, double freq)
 
-//Set the group frequency. 44100 is usually the defaul frequency
+//Set the group frequency. 44100 is usually the default frequency
 //Regular Groups are 1-4. 0 for the master group. Useful for bullet time on all sounds
 //Carefull, this overrides the instance frequency too and you may not be able to reset it to normal
 //See Also FMODGroupSetPitch
@@ -2438,7 +2438,7 @@ return external_call(global.dll_FMODGroupGetSpectrumSnapshot2,argument0,argument
 //export double FMODListenerSetNumber(double number)
 
 //Use this to set the number of listener in the game room
-//A listenner is usally a player... Player 2 can be another listener
+//A listener is usally a player... Player 2 can be another listener
 // A listener can also be a "game microphone" in the room, hearing 
 // the sounds in the room and playing them on the speaker.
 
@@ -2449,7 +2449,7 @@ return external_call(global.dll_FMODListenerSetNumber,argument0);
 #define FMODListenerSet3dPosition
 //export double FMODListenerSet3dPosition(double number, double x, double y, double z)
 //Sets the litenner position in the room
-//number is the listenner id (1 to 4) to position
+//number is the listener id (1 to 4) to position
 //See FMODUpdate for important information
 
 //in player 1 end step
@@ -2467,7 +2467,7 @@ return external_call(global.dll_FMODListenerSet3dPosition,argument0,argument1,ar
 //the extended version of FMODListenerSet3dPosition so you can do your 3d FPS setup
 
 //Sets the litenner position in the room
-//number is the listenner id (1 to 4) to position
+//number is the listener id (1 to 4) to position
 //x,y,z are to world relative positions
 //fx,fy,fz are the foreward directions in vectors 
 //ux,uy,uz are the up direction in vertors 
@@ -3132,7 +3132,7 @@ return external_call(global.dll_FMODEffectGetDefaultFr,argument0);
 
 #define FMODEffectSetDefaultFr
 //export double FMODEffectSetDefaultFr(double effect, double frequency)
-//This function gets the frequency of the effect
+//This function sets the frequency of the effect
 
 //success = FMODEffectSetDefaultFr(effect, -1 to 1);
 
@@ -3181,7 +3181,7 @@ return external_call(global.dll_FMODEffectSetDefaultPan,argument0,argument1);
 
 #define FMODEffectGetDefaultVol
 //export double FMODEffectGetDefaultVol(double effect)
-//This function gets the pan of the effect
+//This function gets the volume of the effect
 
 //0 to 1 = FMODEffectGetDefaultVol(effect);
 
@@ -3204,9 +3204,9 @@ return external_call(global.dll_FMODEffectGetDefaultVol,argument0);
 
 #define FMODEffectSetDefaultVol
 //export double FMODEffectSetDefaultVol(double effect, double vol)
-//This function gets the pan of the effect
+//This function sets the volume of the effect
 
-//success = FMODEffectGetDefaultVol(effect, 0 to 1);
+//success = FMODEffectSetDefaultVol(effect, 0 to 1);
 
 //returns 0 on error, 1 on success
 
@@ -3244,7 +3244,7 @@ return external_call(global.dll_FMODEffectGetSpeakerActive,argument0, argument1)
 //export double FMODEffectSetSpeakerActive(double effect, double speaker, double true/false)
 //This function set the effect is active on the speaker
 
-//FMODEffectSetSpeakerActive(effect,speaker 0 to number of speakers, true/flase);
+//FMODEffectSetSpeakerActive(effect,speaker 0 to number of speakers, true/false);
 
 
 //Have not tried this
