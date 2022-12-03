@@ -7,7 +7,7 @@ Forum: http://gmc.yoyogames.com/index.php?showtopic=333705
 Github: https://github.com/Grix/GMFMODSimpleGrix
 GMFMODSimpleGrix v4.46
 Using 
-FMOD Sound System, copyright ¨Ï Firelight Technologies Pty, Ltd., 1994-2015.
+FMOD Sound System, copyright (c) Firelight Technologies Pty, Ltd., 1994-2015.
 FMOD Ex API version: v4.44.54
 "
 
@@ -3752,7 +3752,7 @@ return external_call(global.dll_FMODSpectrumSetSnapshotType,argument0);
 //}
 //ds_list_destroy(l); //it is faster to destroy and recreate lists than clearing them
 //hack for Studio. may be better to use the string method
-var i = 0;
+var i; i = 0;
 repeat(argument1)
 {
     ds_list_add(argument2,FMODGetSnapshotEntry(i+argument0))
