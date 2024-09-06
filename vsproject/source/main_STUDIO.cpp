@@ -27,8 +27,8 @@ GM STUDIO VERSION
 
 #include <windows.h>
 //#include <windowsx.h>
-#include <fmod.h>
-#include <fmod_errors.h>
+#include "fmod.h"
+#include "fmod_errors.h"
 #include <stdio.h>
 #include <math.h>
 int gmapiinited = 0;
