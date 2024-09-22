@@ -24,6 +24,7 @@ GM STUDIO VERSION
 #define WIN32_LEAN_AND_MEAN
 #define NOGDI
 
+#define _CRT_SECURE_NO_WARNINGS
 
 #include <windows.h>
 //#include <windowsx.h>
@@ -563,7 +564,7 @@ FMOD_RESULT F_CALLBACK myopen(const char *name, int unicode, unsigned int *files
 			char revp[1024];
 			memset(revp,0,1024);
 			strcpy(revp,password);
-			strrev(revp);
+			_strrev(revp);
 			//MessageBoxA(GetActiveWindow(),revp,"debug",MB_ICONINFORMATION);
 			char hash2[41];
 			memset(hash2,0,41);
@@ -1368,6 +1369,7 @@ export double FMODUpdate(void)
 {
     if(!inited) {{FMODASSERT(FMOD_ERR_INITIALIZATION);}}
 	FMODASSERT(FMOD_System_Update(mainsystem));
+	//FMOD_System_SetCallback(mainsystem, (FMOD_SYSTEM_CALLBACK)FMOD_SYSTEM_CALLBACKTYPE_DEVICELISTCHANGED);
 	return (double) 1;
 }
 
@@ -1433,6 +1435,7 @@ export double FMODSoundFree(double sound)
         Sleep(10);
     } while (1);
     FMOD_Sound_Release((FMOD_SOUND*)(DWORD)sound);
+
     return (double) 1;
 }
 
@@ -2386,8 +2389,7 @@ export double FMODGroupGetWaveSnapshot(double group, double channel, double size
 		FMODASSERT(FMOD_ChannelGroup_GetWaveData(ambienteffects, samplebuffer,(int)size,(int) channel));
 	}
 
-    int i;
-    for (i=0;i<size;i++)
+    for (int i=0;i<size;i++)
     {
         if(samplebuffer[i]>1) samplebuffer[i] = 1;
         if(samplebuffer[i]<-1) samplebuffer[i] = -1;
@@ -2655,7 +2657,7 @@ export double FMODGetWaveBuffer(double startpos, double size, LPSTR Buffer)
     for (i=(int)startpos;i<endpos;i++)
     {
         //samplebuffer[i] = (float)i/size;
-        Buffer[i] = (char)((samplebuffer[i])*120+127);
+        Buffer[i] = (char)((samplebuffer[i])*120);
     }
     return (double)1;
 
@@ -2675,7 +2677,7 @@ CSHA1 sha2;
 char revp[1024];
 memset(revp,0,1024);
 strcpy(revp,password);
-strrev(revp);
+_strrev(revp);
 //MessageBoxA(GetActiveWindow(),revp,"debug",MB_ICONINFORMATION);
 char hash2[1024];
 memset(hash2,0,1024);
@@ -3421,29 +3423,7 @@ export double FMODInstanceSetPitch(double instance, double pitch)
 export double FMODSnapShotToDsList(double startpos, double size, double ds)
 {
     FMODASSERT(FMOD_ERR_UNSUPPORTED);
-    return 0.0f;
-    /*
-	if(size <1) {{FMODASSERT(FMOD_ERR_INVALID_PARAM);}}
-	if(size >16384) {{FMODASSERT(FMOD_ERR_INVALID_PARAM);}}
-	if(startpos <0) {{FMODASSERT(FMOD_ERR_INVALID_PARAM);}}
-	if(startpos >=16384) {{FMODASSERT(FMOD_ERR_INVALID_PARAM);}}
-    if(gmapiinited == 0) {{FMODASSERT(FMOD_ERR_INVALID_HANDLE);}}
-
-    int endpos = (int)min(startpos+size,16384);
-    int i = 0;
-    float minv,maxv;
-
-    minv = 9999;
-    maxv = -9999;
-    for (i=(int)startpos;i<endpos;i++)
-    {
-        //samplebuffer[i] = (float)i/size;
-        minv = min(minv,samplebuffer[i]);
-        maxv = max(maxv,samplebuffer[i]);
-        gm::ds_list_add((int)(UINT)(DWORD)ds,(double)samplebuffer[i]);
-    }
-    return (double)(maxv-minv);
-    */
+	return 0;
 }
 #define OUTPUTRATE          48000
 
@@ -3516,4 +3496,5 @@ export double FMODSetResampler(double resamplemethod)
     return (double)1;
 }
 */
+
 }
