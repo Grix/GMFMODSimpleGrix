@@ -16,9 +16,8 @@ dll name so not to potentially create problems.
 
 Cheers!
 
-v4.45g (Grix' fork from 4.44)
+v4.5. Added non-ASCII symbols filenames support. by elpoep
 
-GM STUDIO VERSION
 **********************************************************/
 
 #define WIN32_LEAN_AND_MEAN
@@ -32,6 +31,7 @@ GM STUDIO VERSION
 #include "fmod_errors.h"
 #include <stdio.h>
 #include <math.h>
+
 int gmapiinited = 0;
 unsigned long gmapiresult = 0;
 
@@ -792,7 +792,7 @@ export double FMODinit(double maxsounds, double supportwebfiles)
        result = FMOD_System_Init(mainsystem,(int)maxsounds, FMOD_INIT_NORMAL /*| FMOD_INIT_VOL0_BECOMES_VIRTUAL*/ , 0);
     }
     FMODASSERT(result);
-
+	
     if(supportwebfiles)
         FMODASSERT(FMOD_System_SetStreamBufferSize(mainsystem,64*1024, FMOD_TIMEUNIT_RAWBYTES));
 
@@ -1067,7 +1067,7 @@ export double FMODSoundLoop(double sound, double paused)
     FMODASSERT(FMOD_Sound_GetUserData((FMOD_SOUND *)(DWORD)sound, &a));
 	if(a==NULL){{FMODASSERT(FMOD_ERR_INVALID_HANDLE);}}
 	myinfo *mi = (myinfo *) a;
-	if(mi->threed == TRUE  && mi->streamready == false)
+	if(mi->threed == TRUE&&mi->streamready == false)
 	{
 		MessageBoxA(GetActiveWindow(),"Trying to loop a 3d sound in 2d mode",mi->file,MB_ICONINFORMATION);
 	}
@@ -1235,34 +1235,32 @@ export double FMODSoundIs3d(double sound)
 	myinfo *mi = (myinfo *) a;
 	return (double) mi->threed;
 }
-export double FMODSoundAdd(LPCSTR soundfile, double threed, double streamed)
-{
-    if(!inited) {{FMODASSERT(FMOD_ERR_INITIALIZATION);}}
-    FMOD_SOUND *sound = NULL;
 
-    DWORD flags = FMOD_LOOP_NORMAL | FMOD_2D | FMOD_SOFTWARE|FMOD_ACCURATETIME;
+export double FMODSoundAdd(const char *soundfile, double threed, double streamed)
+{
+	if (!inited) { {FMODASSERT(FMOD_ERR_INITIALIZATION);} }
+	FMOD_SOUND *sound = NULL;
+
+	int len = MultiByteToWideChar(CP_UTF8, 0, soundfile, -1, NULL, 0);
+	wchar_t* wname = new wchar_t[len];
+	MultiByteToWideChar(CP_UTF8, 0, soundfile, -1, wname, len);
+
+    DWORD flags = FMOD_LOOP_NORMAL | FMOD_2D | FMOD_SOFTWARE|FMOD_ACCURATETIME| FMOD_UNICODE| FMOD_CREATESAMPLE;
     if(threed)
 	{
         //MessageBoxA(GetActiveWindow(),soundfile,(LPCSTR)"3d",MB_ICONINFORMATION);
-		flags = FMOD_LOOP_NORMAL | FMOD_3D | FMOD_SOFTWARE | FMOD_3D_LINEARROLLOFF|FMOD_ACCURATETIME;
+		flags = FMOD_LOOP_NORMAL | FMOD_3D | FMOD_SOFTWARE | FMOD_3D_LINEARROLLOFF|FMOD_ACCURATETIME| FMOD_UNICODE| FMOD_CREATESAMPLE;
 	}
 	else
 	{
-        //		MessageBoxA(GetActiveWindow(),soundfile,(LPCSTR)"2D",MB_ICONINFORMATION);
+        		//MessageBoxA(GetActiveWindow(), soundfile,"2D",MB_ICONINFORMATION);
 	}
-    if(streamed == 1)
-		{
-	    FMODASSERT(FMOD_System_CreateStream(mainsystem, soundfile, flags, 0, &sound));
-		}
-	else if (streamed == 2)
-		{
-	    FMODASSERT(FMOD_System_CreateSound(mainsystem, soundfile, flags | FMOD_CREATECOMPRESSEDSAMPLE, 0, &sound));
-		}
-	else
-		{
-		FMODASSERT(FMOD_System_CreateSound(mainsystem, soundfile, flags, 0, &sound));
-		}
-
+	switch ((int)streamed) {
+		case 0:	FMODASSERT(FMOD_System_CreateSound(mainsystem, (const char *)wname, flags, 0, &sound)); break;
+		case 1: FMODASSERT(FMOD_System_CreateStream(mainsystem, (const char *)wname, flags, 0, &sound)); break;
+		case 2: FMODASSERT(FMOD_System_CreateSound(mainsystem, (const char *)wname, flags | FMOD_CREATECOMPRESSEDSAMPLE, 0, &sound)); break;
+		default: break;
+	}
 	if(sound == NULL) {{FMODASSERT(FMOD_ERR_INVALID_HANDLE);}}
 	//MessageBoxA(GetActiveWindow(),"2","",0);
 
@@ -1270,15 +1268,15 @@ export double FMODSoundAdd(LPCSTR soundfile, double threed, double streamed)
 	//MessageBoxA(GetActiveWindow(),"3","",0);
     if(mi == NULL) {FMODASSERT(FMOD_ERR_MEMORY);}
     mi->maxvolume = 1;
-    strcpy(mi->file,soundfile);
-    mi->threed =(threed);
-    mi->streamed =(streamed);
+    strcpy(mi->file, (const char *)wname);
+    mi->threed =((const char *)wname);
+    mi->streamed =((const char *)wname);
 	//all other members set by GMEM_ZEROINIT
 	//MessageBoxA(GetActiveWindow(),"4","",0);
 
     FMODASSERT(FMOD_Sound_SetUserData(sound, (void *)mi));
 	//MessageBoxA(GetActiveWindow(),"5","",0);
-
+	delete[] wname;
 	return (double) (DWORD) sound;
 }
 
@@ -2976,7 +2974,6 @@ export double FMODInstanceGet3DSpread(double instance)
 	return (double) a;
 }
 
-
 export double FMODInstanceGetNextTag(double instance)
 {
     tagname[0] = 0;
@@ -2984,8 +2981,7 @@ export double FMODInstanceGetNextTag(double instance)
     if(!inited) {{FMODASSERT(FMOD_ERR_INITIALIZATION);}}
     if(!(instance>0)){{FMODASSERT(FMOD_ERR_INVALID_HANDLE);}}
 
-
-    FMOD_SOUND * sound = NULL;
+	FMOD_SOUND * sound = NULL;
 
 	FMODASSERT(FMOD_Channel_GetCurrentSound((FMOD_CHANNEL *) (DWORD) instance, &sound));
 	if(sound==NULL) {{FMODASSERT(FMOD_ERR_INVALID_HANDLE);}}
@@ -3029,7 +3025,7 @@ export double FMODGetTagName(LPSTR buffer)
 {
     if(!inited) {{FMODASSERT(FMOD_ERR_INITIALIZATION);}}
     lstrcpy(buffer,tagname);
-//MessageBoxA(GetActiveWindow(),buffer,(LPCSTR)"DebugGetName",MB_ICONINFORMATION);
+	//MessageBoxA(GetActiveWindow(),buffer,(LPCSTR)"DebugGetName",MB_ICONINFORMATION);
     return (double)lstrlen(tagname);
 }
 export double FMODGetTagData(LPSTR buffer)
@@ -3039,6 +3035,10 @@ export double FMODGetTagData(LPSTR buffer)
     return (double)lstrlen(tagdata);
 }
 
+export double FMODGetTagPicture(double instance, char *fname) {
+	
+	return 1;
+}
 
 
 export double FMODInstanceAsyncOK(double instance)
@@ -3075,7 +3075,7 @@ export double FMODSoundAsyncReady(double sound)
         if(a==NULL)
         {
             myinfo *mi = (myinfo *)GlobalAllocPtr(GMEM_FIXED|GMEM_ZEROINIT,(sizeof(myinfo)));
-	       //MessageBoxA(GetActiveWindow(),"3","",0);
+	        //MessageBoxA(GetActiveWindow(),"3","",0);
             if(mi == NULL) {FMODASSERT(FMOD_ERR_MEMORY);}
             mi->maxvolume = 1;
             mi->streamed =(true);
@@ -3098,19 +3098,11 @@ export double FMODSoundAddAsyncStream(LPCSTR soundfile, double threed)
     DWORD flags = FMOD_LOOP_NORMAL | FMOD_2D | FMOD_SOFTWARE |FMOD_ACCURATETIME;
     if(threed)
 	{
-        //MessageBoxA(GetActiveWindow(),soundfile,(LPCSTR)"3d",MB_ICONINFORMATION);
 		flags = FMOD_LOOP_NORMAL | FMOD_3D | FMOD_SOFTWARE | FMOD_3D_LINEARROLLOFF|FMOD_ACCURATETIME;
 	}
     FMODASSERT(FMOD_System_CreateSound(mainsystem, soundfile, flags| FMOD_CREATESTREAM | FMOD_NONBLOCKING, 0, &sound));
-    //char t[] = "123456789";
-    //wsprintf( t, "%ld", (int)sound);
-//	MessageBoxA(GetActiveWindow(),t,"",0);
 
 	if(sound == NULL) {{FMODASSERT(FMOD_ERR_INVALID_HANDLE);}}
-	//MessageBoxA(GetActiveWindow(),"2","",0);
-
-
-	//MessageBoxA(GetActiveWindow(),"5","",0);
 
 	return (double) (DWORD) sound;
 }
@@ -3497,4 +3489,4 @@ export double FMODSetResampler(double resamplemethod)
 }
 */
 
-}
+} /* extern "C" */
