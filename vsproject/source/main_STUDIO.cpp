@@ -1245,11 +1245,11 @@ export double FMODSoundAdd(const char *soundfile, double threed, double streamed
 	wchar_t* wname = new wchar_t[len];
 	MultiByteToWideChar(CP_UTF8, 0, soundfile, -1, wname, len);
 
-    DWORD flags = FMOD_LOOP_NORMAL | FMOD_2D | FMOD_SOFTWARE|FMOD_ACCURATETIME| FMOD_UNICODE| FMOD_CREATESAMPLE;
+    DWORD flags = FMOD_LOOP_NORMAL | FMOD_2D | FMOD_SOFTWARE | FMOD_ACCURATETIME | FMOD_UNICODE;
     if(threed)
 	{
         //MessageBoxA(GetActiveWindow(),soundfile,(LPCSTR)"3d",MB_ICONINFORMATION);
-		flags = FMOD_LOOP_NORMAL | FMOD_3D | FMOD_SOFTWARE | FMOD_3D_LINEARROLLOFF|FMOD_ACCURATETIME| FMOD_UNICODE| FMOD_CREATESAMPLE;
+		flags = flags | FMOD_3D | FMOD_3D_LINEARROLLOFF;
 	}
 	else
 	{
